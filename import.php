@@ -1,15 +1,4 @@
 <?php
-/*
--- Source Code from My Notes Code (www.mynotescode.com)
---
--- Follow Us on Social Media
--- Facebook : http://facebook.com/mynotescode/
--- Twitter  : http://twitter.com/code_notes
--- Google+  : http://plus.google.com/118319575543333993544
---
--- Terimakasih telah mengunjungi blog kami.
--- Jangan lupa untuk Like dan Share catatan-catatan yang ada di blog kami.
-*/
 
 // Load file koneksi.php
 include "koneksi.php";
@@ -22,36 +11,143 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 
 	$excelreader = new PHPExcel_Reader_Excel2007();
 	$loadexcel = $excelreader->load('tmp/'.$nama_file_baru); // Load file excel yang tadi diupload ke folder tmp
-	$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true);
+	$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true, true, true ,true, true, true ,true, true, true ,true,true, true ,true, true, true ,true, true, true ,true,
+ 																									true, true ,true, true, true ,true, true, true ,true,true, true ,true,true, true ,true, true, true ,true, true, true ,true, true, true ,true,
+																								true, true ,true, true, true ,true, true, true);
 
 	// Buat query Insert
-	$sql = $pdo->prepare("INSERT INTO siswa VALUES(:nis,:nama,:jk,:telp,:alamat)");
+	$sql = $pdo->prepare("INSERT INTO lb_1 VALUES(:id,:kode,:penyakit,:1BL,:1BP,:1LL,:1LP,:2BL,:2BP,:2LL,:2LP,:3BL,:3BP,:3LL,:3LP,:4BL,:4BP,:4LL,:4LP,:5BL,:5BP,:5LL,:5LP,:
+																								6BL,:6BP,:6LL,:6LP,:7BL,:7BP,:7LL,:7LP,:8BL,:8BP,:8LL,:8LP,:9BL,:9BP,:9LL,:9LP,:10BL,:10BP,:10LL,:10LP,:11BL,:11BP,:11LL,:11LP,:
+																							  12BL,:12BP,:12LL,:12LP,:total_baru,:total_lama,:total_jumlah)");
 
 	$numrow = 1;
 	foreach($sheet as $row){
 		// Ambil data pada excel sesuai Kolom
-		$nis = $row['B']; // Ambil data NIS
-		$nama = $row['C']; // Ambil data nama
-		$jenis_kelamin = $row['D']; // Ambil data jenis kelamin
-		$telp = $row['E']; // Ambil data telepon
-		$alamat = $row['F']; // Ambil data alamat
-		// $alamat = $row['F']; // Ambil data table baru 1
-		// $alamat = $row['G']; // Ambil data table baru 2
+		$id = $row['A']; // Ambil data NIS
+		$kode = $row['B']; // Ambil data nama
+		$penyakit = $row['C']; // Ambil data jenis kelamin
+		$satuBL = $row['D'];
+		$satuBP = $row['E'];
+		$satuLL = $row['F'];
+		$satuLP = $row['G'];
+		$duaBL = $row['H'];
+		$duaBP = $row['I'];
+		$duaLL = $row['J'];
+		$duaLP = $row['K'];
+		$tigaBL = $row['L'];
+		$tigaBP = $row['M'];
+		$tigaLL = $row['N'];
+		$tigaLP = $row['O'];
+		$empatBL = $row['P'];
+		$empatBP = $row['Q'];
+		$empatLL = $row['R'];
+		$empatLP = $row['S'];
+		$limaBL = $row['T'];
+		$limaBP = $row['U'];
+		$limaLL = $row['V'];
+		$limaLP = $row['W'];
+		$enamBL = $row['X'];
+		$enamBP = $row['Y'];
+		$enamLL = $row['Z'];
+		$enamLP = $row['AA'];
+		$tujuhBL = $row['AB'];
+		$tujuhBP = $row['AC'];
+		$tujuhLL = $row['AD'];
+		$tujuhLP = $row['AE'];
+		$delapanBL = $row['AF'];
+		$delapanBP = $row['AG'];
+		$delapanLL = $row['AH'];
+		$delapanLP = $row['AI'];
+		$sembilanBL = $row['AJ'];
+		$sembilanBP = $row['AK'];
+		$sembilanLL = $row['AL'];
+		$sembilanLP = $row['AM'];
+		$sepuluhBL = $row['AN'];
+		$sepuluhBP = $row['AO'];
+		$sepuluhLL = $row['AP'];
+		$sepuluhLP = $row['AQ'];
+		$sebelasBL = $row['AR'];
+		$sebelasBP = $row['AS'];
+		$sebelasLL = $row['AT'];
+		$sebelasLP = $row['AU'];
+		$duabelasBL = $row['AV'];
+		$duabelasBP = $row['AW'];
+		$duabelasLL = $row['AX'];
+		$duabelasLP = $row['AY'];
+		$total_baru = $row['AZ'];
+		$total_lama = $row['BA'];
+		$total_jumlah = $row['BB'];
 
 		// Cek jika semua data tidak diisi
-		if(empty($nis) && empty($nama) && empty($jenis_kelamin) && empty($telp) && empty($alamat))
-			continue; // Lewat data pada baris ini (masuk ke looping selanjutnya / baris selanjutnya)
+		if(empty($id) && empty($kode) && empty($penyakit) && empty($satuBL) && empty($satuBP) && empty($satuLL) && empty($satuLP)
+		&& empty($duaBL) && empty($duaBP) && empty($duaLL) && empty($duaLP) && empty($tigaBL) && empty($tigaBP) && empty($tigaLL) && empty($tigaLP)
+		&& empty($empatBL) && empty($empatBP) && empty($empatLL) && empty($empatLP) && empty($limaBL) && empty($limaBP) && empty($limaLL) && empty($limaLP)
+		&& empty($enamBL) && empty($enamBP) && empty($enamLL) && empty($enamLP) && empty($tujuhBL) && empty($tujuhBP) && empty($tujuhLL) && empty($tujuhLP)
+		&& empty($delapanBL) && empty($delapanBP) && empty($delapanLL) && empty($delapanLP) && empty($sembilanBL) && empty($sembilanBP) && empty($sembilanLL) && empty($sembilanLP)
+		&& empty($sepuluhBL) && empty($sepuluhBP) && empty($sepuluhLL) && empty($sepuluhLP) && empty($sebelasBL) && empty($sebelasBP) && empty($sebelasLL) && empty($sebelasLP)
+		&& empty($duabelasBL) && empty($duabelasBP) && empty($duabelasLL) && empty($duabelasLP)&& empty($total_baru) && empty($total_lama) && empty($total_jumlah)	)
+		continue; // Lewat data pada baris ini (masuk ke looping selanjutnya / baris selanjutnya)
 
 		// Cek $numrow apakah lebih dari 1
 		// Artinya karena baris pertama adalah nama-nama kolom
 		// Jadi dilewat saja, tidak usah diimport
 		if($numrow > 1){
 			// Proses simpan ke Database
-			$sql->bindParam(':nis', $nis);
-			$sql->bindParam(':nama', $nama);
-			$sql->bindParam(':jk', $jenis_kelamin);
-			$sql->bindParam(':telp', $telp);
-			$sql->bindParam(':alamat', $alamat);
+			$sql->bindParam(':id', $id);
+			$sql->bindParam(':kode', $kode);
+			$sql->bindParam(':penyakit', $penyakit);
+			$sql->bindParam(':1BL', $satuBL);
+			$sql->bindParam(':1BP', $satuBP);
+			$sql->bindParam(':1LL', $satuLL);
+			$sql->bindParam(':1LP', $satuLP);
+			$sql->bindParam(':2BL', $duaBL);
+			$sql->bindParam(':2BP', $duaBP);
+			$sql->bindParam(':2LL', $duaLL);
+			$sql->bindParam(':2LP', $duaLP);
+			$sql->bindParam(':3BL', $tigaBL);
+			$sql->bindParam(':3BP', $tigaBP);
+			$sql->bindParam(':3LL', $tigaLL);
+			$sql->bindParam(':3LP', $tigaLP);
+			$sql->bindParam(':4BL', $empatBL);
+			$sql->bindParam(':4BP', $empatBP);
+			$sql->bindParam(':4LL', $empatLL);
+			$sql->bindParam(':4LP', $empatLP);
+			$sql->bindParam(':5BL', $limaBL);
+			$sql->bindParam(':5BP', $limaBP);
+			$sql->bindParam(':5LL', $limaLL);
+			$sql->bindParam(':5LP', $limaLP);
+			$sql->bindParam(':6BL', $enamBL);
+			$sql->bindParam(':6BP', $enamBP);
+			$sql->bindParam(':6LL', $enamLL);
+			$sql->bindParam(':6LP', $enamLP);
+			$sql->bindParam(':7BL', $tujuhBL);
+			$sql->bindParam(':7BP', $tujuhBP);
+			$sql->bindParam(':7LL', $tujuhLL);
+			$sql->bindParam(':7LP', $tujuhLP);
+			$sql->bindParam(':8BL', $delapanBL);
+			$sql->bindParam(':8BP', $delapanBP);
+			$sql->bindParam(':8LL', $delapanLL);
+			$sql->bindParam(':8LP', $delpanLP);
+			$sql->bindParam(':9BL', $sembilanBL);
+			$sql->bindParam(':9BP', $sembilanBP);
+			$sql->bindParam(':9LL', $sembilanLL);
+			$sql->bindParam(':9LP', $sembilanLP);
+			$sql->bindParam(':10BL', $sepuluhBL);
+			$sql->bindParam(':10BP', $sepuluhBP);
+			$sql->bindParam(':10LL', $sepuluhLL);
+			$sql->bindParam(':10LP', $sepuluhLP);
+			$sql->bindParam(':11BL', $sebelasBL);
+			$sql->bindParam(':11BP', $sebelasBP);
+			$sql->bindParam(':11LL', $sebelasLL);
+			$sql->bindParam(':11LP', $sebelasLP);
+			$sql->bindParam(':12BL', $duabelasBL);
+			$sql->bindParam(':12BP', $duabelasBP);
+			$sql->bindParam(':12LL', $duabelasLL);
+			$sql->bindParam(':12LP', $duabelasLP);
+			$sql->bindParam(':total_baru', $total_baru);
+			$sql->bindParam(':total_lama', $total_lama);
+			$sql->bindParam(':total_jumlah', $total_jumlah);
+
 			$sql->execute(); // Eksekusi query insert
 		}
 
