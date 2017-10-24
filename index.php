@@ -1,15 +1,3 @@
-<!--
--- Source Code from My Notes Code (www.mynotescode.com)
---
--- Follow Us on Social Media
--- Facebook : http://facebook.com/mynotescode/
--- Twitter  : http://twitter.com/code_notes
--- Google+  : http://plus.google.com/118319575543333993544
---
--- Terimakasih telah mengunjungi blog kami.
--- Jangan lupa untuk Like dan Share catatan-catatan yang ada di blog kami.
--->
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -134,7 +122,6 @@
 						<th colspan="2">Lama</th>
 						<th rowspan="2">JML</th>
 					</tr>
-
 					<tr>
 						<th>L</th>
 						<th>P</th>
@@ -214,7 +201,6 @@
 						<th>L</th>
 						<th>P</th>
 
-						<!-- <th></th> -->
 					</tr>
 					<?php
 					// Load file koneksi.php

@@ -1,15 +1,3 @@
-<!--
--- Source Code from My Notes Code (www.mynotescode.com)
---
--- Follow Us on Social Media
--- Facebook : http://facebook.com/mynotescode/
--- Twitter  : http://twitter.com/code_notes
--- Google+  : http://plus.google.com/118319575543333993544
---
--- Terimakasih telah mengunjungi blog kami.
--- Jangan lupa untuk Like dan Share catatan-catatan yang ada di blog kami.
--->
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -57,32 +45,22 @@
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#" style="color: white;"><b>Import Data Excel dengan PHP</b></a>
 				</div>
-				<p class="navbar-text navbar-right hidden-xs" style="color: white;padding-right: 10px;">
-					FOLLOW US ON &nbsp;
-					<a target="_blank" style="background: #3b5998; padding: 0 5px; border-radius: 4px; color: #f7f7f7; text-decoration: none;" href="https://www.facebook.com/mynotescode">Facebook</a>
-					<a target="_blank" style="background: #00aced; padding: 0 5px; border-radius: 4px; color: #ffffff; text-decoration: none;" href="https://twitter.com/code_notes">Twitter</a>
-					<a target="_blank" style="background: #d34836; padding: 0 5px; border-radius: 4px; color: #ffffff; text-decoration: none;" href="https://plus.google.com/118319575543333993544">Google+</a>
-				</p>
 			</div>
 		</nav>
-
 		<!-- Content -->
 		<div style="padding: 0 15px;">
 			<!-- Buat sebuah tombol Cancel untuk kemabli ke halaman awal / view data -->
 			<a href="index.php" class="btn btn-danger pull-right">
 				<span class="glyphicon glyphicon-remove"></span> Cancel
 			</a>
-
 			<h3>Form Import Data</h3>
 			<hr>
-
 			<!-- Buat sebuah tag form dan arahkan action nya ke file ini lagi -->
 			<form method="post" action="" enctype="multipart/form-data">
 				<a href="Format.xlsx" class="btn btn-default">
 					<span class="glyphicon glyphicon-download"></span>
 					Download Format
 				</a><br><br>
-
 				<!--
 				-- Buat sebuah input type file
 				-- class pull-left berfungsi agar file input berada di sebelah kiri
@@ -132,17 +110,145 @@
 					echo "<div class='alert alert-danger' id='kosong'>
 					Semua data belum diisi, Ada <span id='jumlah_kosong'></span> data yang belum diisi.
 					</div>";
-
 					echo "<table class='table table-bordered'>
 					<tr>
-						<th colspan='5' class='text-center'>Preview Data</th>
-					</tr>
-					<tr>
-						<th>NIS</th>
-						<th>Nama</th>
-						<th>Jenis Kelamin</th>
-						<th>Telepon</th>
-						<th>Alamat</th>
+						<th align='center' rowspan='3'>No</th>
+						<th align='center' rowspan='3'>Kode</th>
+						<th align='center' rowspan='3'>Penyakit</th>
+						<th align='center' colspan='3'>0-7 Hr</th>
+						<th align='center' colspan='3'>8-28 Hr</th>
+						<th align='center' colspan='4'>1Bl-1Th</th>
+						<th align='center' colspan='4'>1-4Th</th>
+						<th align='center' colspan='4'>5-9Th</th>
+						<th align='center' colspan='4'>10-14Th</th>
+						<th align='center' colspan='4'>15-19Th</th>
+						<th align='center' colspan='4'>20-44Th</th>
+						<th align='center' colspan='4'>45-54Th</th>
+						<th align='center' colspan='4'>55-59Th</th>
+						<th align='center' colspan='4'>60-69Th</th>
+						<th align='center' colspan='4'>70Th</th>
+						<th align='center' colspan='5'>Total</th>
+						</tr>
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+
+							<th colspan='2'>Baru</th>
+							<th colspan='2'>Lama</th>
+							<th rowspan='2'>JML</th>
+						</tr>
+						<tr>
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+							<th>L</th>
+							<th>P</th>
+
+						</tr>
 					</tr>";
 
 					$numrow = 1;
