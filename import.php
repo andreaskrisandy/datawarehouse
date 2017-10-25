@@ -13,7 +13,7 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 	$loadexcel = $excelreader->load('tmp/'.$nama_file_baru); // Load file excel yang tadi diupload ke folder tmp
 	$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true, true, true ,true, true, true ,true, true, true ,true,true, true ,true, true, true ,true, true, true ,true,
  																									true, true ,true, true, true ,true, true, true ,true,true, true ,true,true, true ,true, true, true ,true, true, true ,true, true, true ,true,
-																								true, true ,true, true, true ,true, true, true, true, true);
+																								true, true ,true, true, true ,true, true, true, true, true, true, true);
 
 	// Buat query Insert
 	$sql = $pdo->prepare("INSERT INTO lb_1 VALUES(:id,:kode,:penyakit,:1BL,:1BP,:1LL,:1LP,:2BL,:2BP,:2LL,:2LP,:3BL,:3BP,:3LL,:3LP,:4BL,:4BP,:4LL,:4LP,:5BL,:5BP,:5LL,:5LP,:
