@@ -127,7 +127,7 @@
 						<th align='center' colspan='4'>55-59Th</th>
 						<th align='center' colspan='4'>60-69Th</th>
 						<th align='center' colspan='4'>70Th</th>
-						<th align='center' colspan='5'>Total</th>
+						<th align='center' colspan='7'>Total</th>
 						</tr>
 							<th colspan='2'>Baru</th>
 							<th colspan='2'>Lama</th>
@@ -255,38 +255,218 @@
 					$kosong = 0;
 					foreach($sheet as $row){ // Lakukan perulangan dari data yang ada di excel
 						// Ambil data pada excel sesuai Kolom
-						$nis = $row['B']; // Ambil data NIS
-						$nama = $row['C']; // Ambil data nama
-						$jenis_kelamin = $row['D']; // Ambil data jenis kelamin
-						$telp = $row['E']; // Ambil data telepon
-						$alamat = $row['F']; // Ambil data alamat
+						$id = $row['A']; // Ambil data NIS
+						$kode = $row['B']; // Ambil data nama
+						$penyakit = $row['C']; // Ambil data jenis kelamin
+						$satuBL = $row['D'];
+						$satuBP = $row['E'];
+						$satuLL = $row['F'];
+						$satuLP = $row['G'];
+						$duaBL = $row['H'];
+						$duaBP = $row['I'];
+						$duaLL = $row['J'];
+						$duaLP = $row['K'];
+						$tigaBL = $row['L'];
+						$tigaBP = $row['M'];
+						$tigaLL = $row['N'];
+						$tigaLP = $row['O'];
+						$empatBL = $row['P'];
+						$empatBP = $row['Q'];
+						$empatLL = $row['R'];
+						$empatLP = $row['S'];
+						$limaBL = $row['T'];
+						$limaBP = $row['U'];
+						$limaLL = $row['V'];
+						$limaLP = $row['W'];
+						$enamBL = $row['X'];
+						$enamBP = $row['Y'];
+						$enamLL = $row['Z'];
+						$enamLP = $row['AA'];
+						$tujuhBL = $row['AB'];
+						$tujuhBP = $row['AC'];
+						$tujuhLL = $row['AD'];
+						$tujuhLP = $row['AE'];
+						$delapanBL = $row['AF'];
+						$delapanBP = $row['AG'];
+						$delapanLL = $row['AH'];
+						$delapanLP = $row['AI'];
+						$sembilanBL = $row['AJ'];
+						$sembilanBP = $row['AK'];
+						$sembilanLL = $row['AL'];
+						$sembilanLP = $row['AM'];
+						$sepuluhBL = $row['AN'];
+						$sepuluhBP = $row['AO'];
+						$sepuluhLL = $row['AP'];
+						$sepuluhLP = $row['AQ'];
+						$sebelasBL = $row['AR'];
+						$sebelasBP = $row['AS'];
+						$sebelasLL = $row['AT'];
+						$sebelasLP = $row['AU'];
+						$duabelasBL = $row['AV'];
+						$duabelasBP = $row['AW'];
+						$duabelasLL = $row['AX'];
+						$duabelasLP = $row['AY'];
+						$total_baru_l = $row['AZ'];
+						$total_baru_p = $row['BA'];
+						$total_lama_l = $row['BB'];
+						$total_lama_p = $row['BC'];
+						$total_jumlah = $row['BD'];
 
 						// Cek jika semua data tidak diisi
-						if(empty($nis) && empty($nama) && empty($jenis_kelamin) && empty($telp) && empty($alamat))
-							continue; // Lewat data pada baris ini (masuk ke looping selanjutnya / baris selanjutnya)
+						if(empty($id) && empty($kode) && empty($penyakit) && empty($satuBL) && empty($satuBP) && empty($satuLL) && empty($satuLP)
+						&& empty($duaBL) && empty($duaBP) && empty($duaLL) && empty($duaLP) && empty($tigaBL) && empty($tigaBP) && empty($tigaLL) && empty($tigaLP)
+						&& empty($empatBL) && empty($empatBP) && empty($empatLL) && empty($empatLP) && empty($limaBL) && empty($limaBP) && empty($limaLL) && empty($limaLP)
+						&& empty($enamBL) && empty($enamBP) && empty($enamLL) && empty($enamLP) && empty($tujuhBL) && empty($tujuhBP) && empty($tujuhLL) && empty($tujuhLP)
+						&& empty($delapanBL) && empty($delapanBP) && empty($delapanLL) && empty($delapanLP) && empty($sembilanBL) && empty($sembilanBP) && empty($sembilanLL) && empty($sembilanLP)
+						&& empty($sepuluhBL) && empty($sepuluhBP) && empty($sepuluhLL) && empty($sepuluhLP) && empty($sebelasBL) && empty($sebelasBP) && empty($sebelasLL) && empty($sebelasLP)
+						&& empty($duabelasBL) && empty($duabelasBP) && empty($duabelasLL) && empty($duabelasLP)&& empty($total_baru_l) && empty($total_baru_p) && empty($total_lama_l) && empty($total_lama_p) && empty($total_jumlah)	)
+						continue; // Lewat data pada baris ini (masuk ke looping selanjutnya / baris selanjutnya)
 
 						// Cek $numrow apakah lebih dari 1
 						// Artinya karena baris pertama adalah nama-nama kolom
 						// Jadi dilewat saja, tidak usah diimport
-						if($numrow > 1){
+						if($numrow > 3){
 							// Validasi apakah semua data telah diisi
-							$nis_td = ( ! empty($nis))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$nama_td = ( ! empty($nama))? "" : " style='background: #E07171;'"; // Jika Nama kosong, beri warna merah
-							$jk_td = ( ! empty($jenis_kelamin))? "" : " style='background: #E07171;'"; // Jika Jenis Kelamin kosong, beri warna merah
-							$telp_td = ( ! empty($telp))? "" : " style='background: #E07171;'"; // Jika Telepon kosong, beri warna merah
-							$alamat_td = ( ! empty($alamat))? "" : " style='background: #E07171;'"; // Jika Alamat kosong, beri warna merah
+							// $nis_td = ( ! empty($nis))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							// $nama_td = ( ! empty($nama))? "" : " style='background: #E07171;'"; // Jika Nama kosong, beri warna merah
+							// $jk_td = ( ! empty($jenis_kelamin))? "" : " style='background: #E07171;'"; // Jika Jenis Kelamin kosong, beri warna merah
+							// $telp_td = ( ! empty($telp))? "" : " style='background: #E07171;'"; // Jika Telepon kosong, beri warna merah
+							// $alamat_td = ( ! empty($alamat))? "" : " style='background: #E07171;'"; // Jika Alamat kosong, beri warna merah
+
+							$id_td = ( ! empty($id))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$kode_td = ( ! empty($kode))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$penyakit_td = ( ! empty($penyakit))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$satuBL_td = ( ! empty($satuBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$satuBP_td = ( ! empty($satuBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$satuLL_td = ( ! empty($satuLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$satuLP_td = ( ! empty($satuLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duaBL_td = ( ! empty($duaBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duaBP_td = ( ! empty($duaBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duaLL_td = ( ! empty($duaLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duaLP_td = ( ! empty($duaLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tigaBL_td = ( ! empty($tigaBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tigaBP_td = ( ! empty($tigaBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tigaLL_td = ( ! empty($tigaLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tigaLP_td = ( ! empty($tigaLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$empatBL_td = ( ! empty($empatBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$empatBP_td = ( ! empty($empatBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$empatLL_td = ( ! empty($empatLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$empatLP_td = ( ! empty($empatLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$limaBL_td = ( ! empty($limaBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$limaBP_td = ( ! empty($limaBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$limaLL_td = ( ! empty($limaLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$limaLP_td = ( ! empty($limaLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$enamBL_td = ( ! empty($enamBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$enamBP_td = ( ! empty($enamBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$enamLL_td = ( ! empty($enamLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$enamLP_td = ( ! empty($enamLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tujuhBL_td = ( ! empty($tujuhBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tujuhBP_td = ( ! empty($tujuhBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tujuhLL_td = ( ! empty($tujuhLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tujuhLP_td = ( ! empty($tujuhLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$delapanBL_td = ( ! empty($delapanBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$delapanBP_td = ( ! empty($delapanBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$delapanLL_td = ( ! empty($delapanLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$delapanLP_td = ( ! empty($delapanLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sembilanBL_td = ( ! empty($sembilanBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sembilanBP_td = ( ! empty($sembilanBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sembilanLL_td = ( ! empty($sembilanLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sembilanLP_td = ( ! empty($sembilanLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sepuluhBL_td = ( ! empty($sepuluhBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sepuluhBP_td = ( ! empty($sepuluhBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sepuluhLL_td = ( ! empty($sepuluhLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sepuluhLP_td = ( ! empty($sepuluhLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sebelasBL_td = ( ! empty($sebelasBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sebelasBP_td = ( ! empty($sebelasBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sebelasLL_td = ( ! empty($sebelasLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sebelasLP_td = ( ! empty($sebelasLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duabelasBL_td = ( ! empty($duabelasBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duabelasBP_td = ( ! empty($duabelasBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duabelasLL_td = ( ! empty($duabelasLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duabelasLP_td = ( ! empty($duabelasLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_baru_l_td = ( ! empty($total_baru_l))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_baru_p_td = ( ! empty($total_baru_p))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_lama_l_td = ( ! empty($total_lama_l))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_lama_p_td = ( ! empty($total_lama_p))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_jumlah_td = ( ! empty($total_jumlah))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
 
 							// Jika salah satu data ada yang kosong
-							if(empty($nis) or empty($nama) or empty($jenis_kelamin) or empty($telp) or empty($alamat)){
+							if(empty($id) && empty($kode) && empty($penyakit) && empty($satuBL) && empty($satuBP) && empty($satuLL) && empty($satuLP)
+							&& empty($duaBL) && empty($duaBP) && empty($duaLL) && empty($duaLP) && empty($tigaBL) && empty($tigaBP) && empty($tigaLL) && empty($tigaLP)
+							&& empty($empatBL) && empty($empatBP) && empty($empatLL) && empty($empatLP) && empty($limaBL) && empty($limaBP) && empty($limaLL) && empty($limaLP)
+							&& empty($enamBL) && empty($enamBP) && empty($enamLL) && empty($enamLP) && empty($tujuhBL) && empty($tujuhBP) && empty($tujuhLL) && empty($tujuhLP)
+							&& empty($delapanBL) && empty($delapanBP) && empty($delapanLL) && empty($delapanLP) && empty($sembilanBL) && empty($sembilanBP) && empty($sembilanLL) && empty($sembilanLP)
+							&& empty($sepuluhBL) && empty($sepuluhBP) && empty($sepuluhLL) && empty($sepuluhLP) && empty($sebelasBL) && empty($sebelasBP) && empty($sebelasLL) && empty($sebelasLP)
+							&& empty($duabelasBL) && empty($duabelasBP) && empty($duabelasLL) && empty($duabelasLP)&& empty($total_baru_l) && empty($total_baru_p) && empty($total_lama_l) && empty($total_lama_p) && empty($total_jumlah)	)
+							{
 								$kosong++; // Tambah 1 variabel $kosong
 							}
 
+							// echo "<tr>";
+							// echo "<td".$nis_td.">".$nis."</td>";
+							// echo "<td".$nama_td.">".$nama."</td>";
+							// echo "<td".$jk_td.">".$jenis_kelamin."</td>";
+							// echo "<td".$telp_td.">".$telp."</td>";
+							// echo "<td".$alamat_td.">".$alamat."</td>";
+							// echo "</tr>";
+
 							echo "<tr>";
-							echo "<td".$nis_td.">".$nis."</td>";
-							echo "<td".$nama_td.">".$nama."</td>";
-							echo "<td".$jk_td.">".$jenis_kelamin."</td>";
-							echo "<td".$telp_td.">".$telp."</td>";
-							echo "<td".$alamat_td.">".$alamat."</td>";
+							echo "<td".$id_td.">".$id."</td>";
+							echo "<td".$kode_td.">".$kode."</td>";
+							echo "<td".$penyakit_td.">".$penyakit."</td>";
+							echo "<td".$satuBL_td.">".$satuBL."</td>";
+							echo "<td".$satuBP_td.">".$satuBP."</td>";
+							echo "<td".$satuLL_td.">".$satuLL."</td>";
+							echo "<td".$satuLP_td.">".$satuLP."</td>";
+							echo "<td".$duaBL_td.">".$duaBL."</td>";
+							echo "<td".$duaBP_td.">".$duaBP."</td>";
+							echo "<td".$duaLL_td.">".$duaLL."</td>";
+							echo "<td".$duaLP_td.">".$duaLP."</td>";
+							echo "<td".$tigaBL_td.">".$tigaBL."</td>";
+							echo "<td".$tigaBP_td.">".$tigaBP."</td>";
+							echo "<td".$tigaLL_td.">".$tigaLL."</td>";
+							echo "<td".$tigaLP_td.">".$tigaLP."</td>";
+							echo "<td".$empatBL_td.">".$empatBL."</td>";
+							echo "<td".$empatBP_td.">".$empatBP."</td>";
+							echo "<td".$empatLL_td.">".$empatLL."</td>";
+							echo "<td".$empatLP_td.">".$empatLP."</td>";
+							echo "<td".$limaBL_td.">".$limaBL."</td>";
+							echo "<td".$limaBP_td.">".$limaBP."</td>";
+							echo "<td".$limaLL_td.">".$limaLL."</td>";
+							echo "<td".$limaLP_td.">".$limaLP."</td>";
+							echo "<td".$enamBL_td.">".$enamBL."</td>";
+							echo "<td".$enamBP_td.">".$enamBP."</td>";
+							echo "<td".$enamLL_td.">".$enamLL."</td>";
+							echo "<td".$enamLP_td.">".$enamLP."</td>";
+							echo "<td".$tujuhBL_td.">".$tujuhBL."</td>";
+							echo "<td".$tujuhBP_td.">".$tujuhBP."</td>";
+							echo "<td".$tujuhLL_td.">".$tujuhLL."</td>";
+							echo "<td".$tujuhLP_td.">".$tujuhLP."</td>";
+							echo "<td".$delapanBL_td.">".$delapanBL."</td>";
+							echo "<td".$delapanBP_td.">".$delapanBP."</td>";
+							echo "<td".$delapanLL_td.">".$delapanLL."</td>";
+							echo "<td".$delapanLP_td.">".$delapanLP."</td>";
+							echo "<td".$sembilanBL_td.">".$sembilanBL."</td>";
+							echo "<td".$sembilanBP_td.">".$sembilanBP."</td>";
+							echo "<td".$sembilanLL_td.">".$sembilanLL."</td>";
+							echo "<td".$sembilanLP_td.">".$sembilanLP."</td>";
+							echo "<td".$sepuluhBL_td.">".$sepuluhBL."</td>";
+							echo "<td".$sepuluhBP_td.">".$sepuluhBP."</td>";
+							echo "<td".$sepuluhLL_td.">".$sepuluhLL."</td>";
+							echo "<td".$sepuluhLP_td.">".$sepuluhLP."</td>";
+							echo "<td".$sebelasBL_td.">".$sebelasBL."</td>";
+							echo "<td".$sebelasBP_td.">".$sebelasBP."</td>";
+							echo "<td".$sebelasLL_td.">".$sebelasLL."</td>";
+							echo "<td".$sebelasLP_td.">".$sebelasLP."</td>";
+							echo "<td".$duabelasBL_td.">".$duabelasBL."</td>";
+							echo "<td".$duabelasBP_td.">".$duabelasBP."</td>";
+							echo "<td".$duabelasLL_td.">".$duabelasLL."</td>";
+							echo "<td".$duabelasLP_td.">".$duabelasLP."</td>";
+							echo "<td".$total_baru_l_td.">".$total_baru_l."</td>";
+							echo "<td".$total_baru_p_td.">".$total_baru_p."</td>";
+							echo "<td".$total_lama_l_td.">".$total_lama_l."</td>";
+							echo "<td".$total_lama_p_td.">".$total_lama_p."</td>";
+							echo "<td".$total_jumlah_td.">".$total_jumlah."</td>";
 							echo "</tr>";
 						}
 
