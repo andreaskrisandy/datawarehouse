@@ -7,7 +7,7 @@
 		<title>Import Data Excel dengan PHP</title>
 
 		<!-- Load File bootstrap.min.css yang ada difolder css -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +29,7 @@
 		</style>
 
 		<!-- Load File jquery.min.js yang ada difolder js -->
-		<script src="js/jquery.min.js"></script>
+		<script src="assets/css/js/jquery.min.js"></script>
 
 		<script>
 		$(document).ready(function(){
@@ -57,7 +57,7 @@
 			<hr>
 			<!-- Buat sebuah tag form dan arahkan action nya ke file ini lagi -->
 			<form method="post" action="" enctype="multipart/form-data">
-				<a href="Format.xlsx" class="btn btn-default">
+				<a href="assets/formatlb1.xlsx" class="btn btn-default">
 					<span class="glyphicon glyphicon-download"></span>
 					Download Format
 				</a><br><br>

@@ -7,14 +7,7 @@
 		<title>Import Data Excel dengan PHP</title>
 
 		<!-- Load File bootstrap.min.css yang ada difolder css -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
+		<link href="assets/css/css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- Style untuk Loading -->
 		<style>
@@ -35,12 +28,6 @@
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#" style="color: white;"><b>Import Data Excel dengan PHP</b></a>
 				</div>
-				<p class="navbar-text navbar-right hidden-xs" style="color: white;padding-right: 10px;">
-					FOLLOW US ON &nbsp;
-					<a target="_blank" style="background: #3b5998; padding: 0 5px; border-radius: 4px; color: #f7f7f7; text-decoration: none;" href="https://www.facebook.com/mynotescode">Facebook</a>
-					<a target="_blank" style="background: #00aced; padding: 0 5px; border-radius: 4px; color: #ffffff; text-decoration: none;" href="https://twitter.com/code_notes">Twitter</a>
-					<a target="_blank" style="background: #d34836; padding: 0 5px; border-radius: 4px; color: #ffffff; text-decoration: none;" href="https://plus.google.com/118319575543333993544">Google+</a>
-				</p>
 			</div>
 		</nav>
 
