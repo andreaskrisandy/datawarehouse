@@ -13,12 +13,12 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 	$loadexcel = $excelreader->load('tmp/'.$nama_file_baru); // Load file excel yang tadi diupload ke folder tmp
 	$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true, true, true ,true, true, true ,true, true, true ,true,true, true ,true, true, true ,true, true, true ,true,
  																									true, true ,true, true, true ,true, true, true ,true,true, true ,true,true, true ,true, true, true ,true, true, true ,true, true, true ,true,
-																								true, true ,true, true, true ,true, true, true);
+																								true, true ,true, true, true ,true, true, true, true, true);
 
 	// Buat query Insert
 	$sql = $pdo->prepare("INSERT INTO lb_1 VALUES(:id,:kode,:penyakit,:1BL,:1BP,:1LL,:1LP,:2BL,:2BP,:2LL,:2LP,:3BL,:3BP,:3LL,:3LP,:4BL,:4BP,:4LL,:4LP,:5BL,:5BP,:5LL,:5LP,:
 																								6BL,:6BP,:6LL,:6LP,:7BL,:7BP,:7LL,:7LP,:8BL,:8BP,:8LL,:8LP,:9BL,:9BP,:9LL,:9LP,:10BL,:10BP,:10LL,:10LP,:11BL,:11BP,:11LL,:11LP,:
-																							  12BL,:12BP,:12LL,:12LP,:total_baru,:total_lama,:total_jumlah)");
+																							  12BL,:12BP,:12LL,:12LP,:total_baru_l,:total_baru_p,:total_lama_l,:total_lama_p,:total_jumlah)");
 
 	$numrow = 1;
 	foreach($sheet as $row){
@@ -74,9 +74,11 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 		$duabelasBP = $row['AW'];
 		$duabelasLL = $row['AX'];
 		$duabelasLP = $row['AY'];
-		$total_baru = $row['AZ'];
-		$total_lama = $row['BA'];
-		$total_jumlah = $row['BB'];
+		$total_baru_l = $row['AZ'];
+		$total_baru_p = $row['BA'];
+		$total_lama_l = $row['BB'];
+		$total_lama_p = $row['BC'];
+		$total_jumlah = $row['BD'];
 
 		// Cek jika semua data tidak diisi
 		if(empty($id) && empty($kode) && empty($penyakit) && empty($satuBL) && empty($satuBP) && empty($satuLL) && empty($satuLP)
@@ -85,13 +87,13 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 		&& empty($enamBL) && empty($enamBP) && empty($enamLL) && empty($enamLP) && empty($tujuhBL) && empty($tujuhBP) && empty($tujuhLL) && empty($tujuhLP)
 		&& empty($delapanBL) && empty($delapanBP) && empty($delapanLL) && empty($delapanLP) && empty($sembilanBL) && empty($sembilanBP) && empty($sembilanLL) && empty($sembilanLP)
 		&& empty($sepuluhBL) && empty($sepuluhBP) && empty($sepuluhLL) && empty($sepuluhLP) && empty($sebelasBL) && empty($sebelasBP) && empty($sebelasLL) && empty($sebelasLP)
-		&& empty($duabelasBL) && empty($duabelasBP) && empty($duabelasLL) && empty($duabelasLP)&& empty($total_baru) && empty($total_lama) && empty($total_jumlah)	)
+		&& empty($duabelasBL) && empty($duabelasBP) && empty($duabelasLL) && empty($duabelasLP)&& empty($total_baru_l) && empty($total_baru_p) && empty($total_lama_l) && empty($total_lama_p) && empty($total_jumlah)	)
 		continue; // Lewat data pada baris ini (masuk ke looping selanjutnya / baris selanjutnya)
 
 		// Cek $numrow apakah lebih dari 1
 		// Artinya karena baris pertama adalah nama-nama kolom
 		// Jadi dilewat saja, tidak usah diimport
-		if($numrow > 1){
+		if($numrow > 3){
 			// Proses simpan ke Database
 			$sql->bindParam(':id', $id);
 			$sql->bindParam(':kode', $kode);
@@ -144,8 +146,10 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 			$sql->bindParam(':12BP', $duabelasBP);
 			$sql->bindParam(':12LL', $duabelasLL);
 			$sql->bindParam(':12LP', $duabelasLP);
-			$sql->bindParam(':total_baru', $total_baru);
-			$sql->bindParam(':total_lama', $total_lama);
+			$sql->bindParam(':total_baru_l', $total_baru_l);
+			$sql->bindParam(':total_baru_p', $total_baru_p);
+			$sql->bindParam(':total_lama_l', $total_lama_l);
+			$sql->bindParam(':total_lama_p', $total_lama_p);
 			$sql->bindParam(':total_jumlah', $total_jumlah);
 
 			$sql->execute(); // Eksekusi query insert
