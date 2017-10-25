@@ -313,13 +313,13 @@
 						$total_jumlah = $row['BD'];
 
 						// Cek jika semua data tidak diisi
-						if(empty($id) && empty($kode) && empty($penyakit) && empty($satuBL) && empty($satuBP) && empty($satuLL) && empty($satuLP)
-						&& empty($duaBL) && empty($duaBP) && empty($duaLL) && empty($duaLP) && empty($tigaBL) && empty($tigaBP) && empty($tigaLL) && empty($tigaLP)
-						&& empty($empatBL) && empty($empatBP) && empty($empatLL) && empty($empatLP) && empty($limaBL) && empty($limaBP) && empty($limaLL) && empty($limaLP)
-						&& empty($enamBL) && empty($enamBP) && empty($enamLL) && empty($enamLP) && empty($tujuhBL) && empty($tujuhBP) && empty($tujuhLL) && empty($tujuhLP)
-						&& empty($delapanBL) && empty($delapanBP) && empty($delapanLL) && empty($delapanLP) && empty($sembilanBL) && empty($sembilanBP) && empty($sembilanLL) && empty($sembilanLP)
-						&& empty($sepuluhBL) && empty($sepuluhBP) && empty($sepuluhLL) && empty($sepuluhLP) && empty($sebelasBL) && empty($sebelasBP) && empty($sebelasLL) && empty($sebelasLP)
-						&& empty($duabelasBL) && empty($duabelasBP) && empty($duabelasLL) && empty($duabelasLP)&& empty($total_baru_l) && empty($total_baru_p) && empty($total_lama_l) && empty($total_lama_p) && empty($total_jumlah)	)
+						if(is_null($id) && is_null($kode) && is_null($penyakit) && is_null($satuBL) && is_null($satuBP) && is_null($satuLL) && is_null($satuLP)
+						&& is_null($duaBL) && is_null($duaBP) && is_null($duaLL) && is_null($duaLP) && is_null($tigaBL) && is_null($tigaBP) && is_null($tigaLL) && is_null($tigaLP)
+						&& is_null($empatBL) && is_null($empatBP) && is_null($empatLL) && is_null($empatLP) && is_null($limaBL) && is_null($limaBP) && is_null($limaLL) && is_null($limaLP)
+						&& is_null($enamBL) && is_null($enamBP) && is_null($enamLL) && is_null($enamLP) && is_null($tujuhBL) && is_null($tujuhBP) && is_null($tujuhLL) && is_null($tujuhLP)
+						&& is_null($delapanBL) && is_null($delapanBP) && is_null($delapanLL) && is_null($delapanLP) && is_null($sembilanBL) && is_null($sembilanBP) && is_null($sembilanLL) && is_null($sembilanLP)
+						&& is_null($sepuluhBL) && is_null($sepuluhBP) && is_null($sepuluhLL) && is_null($sepuluhLP) && is_null($sebelasBL) && is_null($sebelasBP) && is_null($sebelasLL) && is_null($sebelasLP)
+						&& is_null($duabelasBL) && is_null($duabelasBP) && is_null($duabelasLL) && is_null($duabelasLP)&& is_null($total_baru_l) && is_null($total_baru_p) && is_null($total_lama_l) && is_null($total_lama_p) && is_null($total_jumlah)	)
 						continue; // Lewat data pada baris ini (masuk ke looping selanjutnya / baris selanjutnya)
 
 						// Cek $numrow apakah lebih dari 1
@@ -327,77 +327,77 @@
 						// Jadi dilewat saja, tidak usah diimport
 						if($numrow > 3){
 							// Validasi apakah semua data telah diisi
-							// $nis_td = ( ! empty($nis))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							// $nama_td = ( ! empty($nama))? "" : " style='background: #E07171;'"; // Jika Nama kosong, beri warna merah
-							// $jk_td = ( ! empty($jenis_kelamin))? "" : " style='background: #E07171;'"; // Jika Jenis Kelamin kosong, beri warna merah
-							// $telp_td = ( ! empty($telp))? "" : " style='background: #E07171;'"; // Jika Telepon kosong, beri warna merah
-							// $alamat_td = ( ! empty($alamat))? "" : " style='background: #E07171;'"; // Jika Alamat kosong, beri warna merah
+							// $nis_td = ( ! is_null($nis))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							// $nama_td = ( ! is_null($nama))? "" : " style='background: #E07171;'"; // Jika Nama kosong, beri warna merah
+							// $jk_td = ( ! is_null($jenis_kelamin))? "" : " style='background: #E07171;'"; // Jika Jenis Kelamin kosong, beri warna merah
+							// $telp_td = ( ! is_null($telp))? "" : " style='background: #E07171;'"; // Jika Telepon kosong, beri warna merah
+							// $alamat_td = ( ! is_null($alamat))? "" : " style='background: #E07171;'"; // Jika Alamat kosong, beri warna merah
 
-							$id_td = ( ! empty($id))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$kode_td = ( ! empty($kode))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$penyakit_td = ( ! empty($penyakit))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$satuBL_td = ( ! empty($satuBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$satuBP_td = ( ! empty($satuBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$satuLL_td = ( ! empty($satuLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$satuLP_td = ( ! empty($satuLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$duaBL_td = ( ! empty($duaBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$duaBP_td = ( ! empty($duaBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$duaLL_td = ( ! empty($duaLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$duaLP_td = ( ! empty($duaLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$tigaBL_td = ( ! empty($tigaBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$tigaBP_td = ( ! empty($tigaBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$tigaLL_td = ( ! empty($tigaLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$tigaLP_td = ( ! empty($tigaLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$empatBL_td = ( ! empty($empatBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$empatBP_td = ( ! empty($empatBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$empatLL_td = ( ! empty($empatLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$empatLP_td = ( ! empty($empatLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$limaBL_td = ( ! empty($limaBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$limaBP_td = ( ! empty($limaBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$limaLL_td = ( ! empty($limaLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$limaLP_td = ( ! empty($limaLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$enamBL_td = ( ! empty($enamBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$enamBP_td = ( ! empty($enamBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$enamLL_td = ( ! empty($enamLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$enamLP_td = ( ! empty($enamLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$tujuhBL_td = ( ! empty($tujuhBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$tujuhBP_td = ( ! empty($tujuhBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$tujuhLL_td = ( ! empty($tujuhLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$tujuhLP_td = ( ! empty($tujuhLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$delapanBL_td = ( ! empty($delapanBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$delapanBP_td = ( ! empty($delapanBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$delapanLL_td = ( ! empty($delapanLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$delapanLP_td = ( ! empty($delapanLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sembilanBL_td = ( ! empty($sembilanBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sembilanBP_td = ( ! empty($sembilanBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sembilanLL_td = ( ! empty($sembilanLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sembilanLP_td = ( ! empty($sembilanLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sepuluhBL_td = ( ! empty($sepuluhBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sepuluhBP_td = ( ! empty($sepuluhBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sepuluhLL_td = ( ! empty($sepuluhLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sepuluhLP_td = ( ! empty($sepuluhLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sebelasBL_td = ( ! empty($sebelasBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sebelasBP_td = ( ! empty($sebelasBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sebelasLL_td = ( ! empty($sebelasLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$sebelasLP_td = ( ! empty($sebelasLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$duabelasBL_td = ( ! empty($duabelasBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$duabelasBP_td = ( ! empty($duabelasBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$duabelasLL_td = ( ! empty($duabelasLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$duabelasLP_td = ( ! empty($duabelasLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$total_baru_l_td = ( ! empty($total_baru_l))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$total_baru_p_td = ( ! empty($total_baru_p))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$total_lama_l_td = ( ! empty($total_lama_l))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$total_lama_p_td = ( ! empty($total_lama_p))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
-							$total_jumlah_td = ( ! empty($total_jumlah))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$id_td = ( ! is_null($id))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$kode_td = ( ! is_null($kode))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$penyakit_td = ( ! is_null($penyakit))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$satuBL_td = ( ! is_null($satuBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$satuBP_td = ( ! is_null($satuBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$satuLL_td = ( ! is_null($satuLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$satuLP_td = ( ! is_null($satuLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duaBL_td = ( ! is_null($duaBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duaBP_td = ( ! is_null($duaBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duaLL_td = ( ! is_null($duaLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duaLP_td = ( ! is_null($duaLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tigaBL_td = ( ! is_null($tigaBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tigaBP_td = ( ! is_null($tigaBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tigaLL_td = ( ! is_null($tigaLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tigaLP_td = ( ! is_null($tigaLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$empatBL_td = ( ! is_null($empatBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$empatBP_td = ( ! is_null($empatBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$empatLL_td = ( ! is_null($empatLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$empatLP_td = ( ! is_null($empatLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$limaBL_td = ( ! is_null($limaBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$limaBP_td = ( ! is_null($limaBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$limaLL_td = ( ! is_null($limaLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$limaLP_td = ( ! is_null($limaLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$enamBL_td = ( ! is_null($enamBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$enamBP_td = ( ! is_null($enamBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$enamLL_td = ( ! is_null($enamLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$enamLP_td = ( ! is_null($enamLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tujuhBL_td = ( ! is_null($tujuhBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tujuhBP_td = ( ! is_null($tujuhBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tujuhLL_td = ( ! is_null($tujuhLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$tujuhLP_td = ( ! is_null($tujuhLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$delapanBL_td = ( ! is_null($delapanBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$delapanBP_td = ( ! is_null($delapanBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$delapanLL_td = ( ! is_null($delapanLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$delapanLP_td = ( ! is_null($delapanLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sembilanBL_td = ( ! is_null($sembilanBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sembilanBP_td = ( ! is_null($sembilanBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sembilanLL_td = ( ! is_null($sembilanLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sembilanLP_td = ( ! is_null($sembilanLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sepuluhBL_td = ( ! is_null($sepuluhBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sepuluhBP_td = ( ! is_null($sepuluhBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sepuluhLL_td = ( ! is_null($sepuluhLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sepuluhLP_td = ( ! is_null($sepuluhLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sebelasBL_td = ( ! is_null($sebelasBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sebelasBP_td = ( ! is_null($sebelasBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sebelasLL_td = ( ! is_null($sebelasLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$sebelasLP_td = ( ! is_null($sebelasLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duabelasBL_td = ( ! is_null($duabelasBL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duabelasBP_td = ( ! is_null($duabelasBP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duabelasLL_td = ( ! is_null($duabelasLL))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$duabelasLP_td = ( ! is_null($duabelasLP))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_baru_l_td = ( ! is_null($total_baru_l))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_baru_p_td = ( ! is_null($total_baru_p))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_lama_l_td = ( ! is_null($total_lama_l))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_lama_p_td = ( ! is_null($total_lama_p))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
+							$total_jumlah_td = ( ! is_null($total_jumlah))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
 
 							// Jika salah satu data ada yang kosong
-							if(empty($id) && empty($kode) && empty($penyakit) && empty($satuBL) && empty($satuBP) && empty($satuLL) && empty($satuLP)
-							&& empty($duaBL) && empty($duaBP) && empty($duaLL) && empty($duaLP) && empty($tigaBL) && empty($tigaBP) && empty($tigaLL) && empty($tigaLP)
-							&& empty($empatBL) && empty($empatBP) && empty($empatLL) && empty($empatLP) && empty($limaBL) && empty($limaBP) && empty($limaLL) && empty($limaLP)
-							&& empty($enamBL) && empty($enamBP) && empty($enamLL) && empty($enamLP) && empty($tujuhBL) && empty($tujuhBP) && empty($tujuhLL) && empty($tujuhLP)
-							&& empty($delapanBL) && empty($delapanBP) && empty($delapanLL) && empty($delapanLP) && empty($sembilanBL) && empty($sembilanBP) && empty($sembilanLL) && empty($sembilanLP)
-							&& empty($sepuluhBL) && empty($sepuluhBP) && empty($sepuluhLL) && empty($sepuluhLP) && empty($sebelasBL) && empty($sebelasBP) && empty($sebelasLL) && empty($sebelasLP)
-							&& empty($duabelasBL) && empty($duabelasBP) && empty($duabelasLL) && empty($duabelasLP)&& empty($total_baru_l) && empty($total_baru_p) && empty($total_lama_l) && empty($total_lama_p) && empty($total_jumlah)	)
+							if(is_null($id) && is_null($kode) && is_null($penyakit) && is_null($satuBL) && is_null($satuBP) && is_null($satuLL) && is_null($satuLP)
+							&& is_null($duaBL) && is_null($duaBP) && is_null($duaLL) && is_null($duaLP) && is_null($tigaBL) && is_null($tigaBP) && is_null($tigaLL) && is_null($tigaLP)
+							&& is_null($empatBL) && is_null($empatBP) && is_null($empatLL) && is_null($empatLP) && is_null($limaBL) && is_null($limaBP) && is_null($limaLL) && is_null($limaLP)
+							&& is_null($enamBL) && is_null($enamBP) && is_null($enamLL) && is_null($enamLP) && is_null($tujuhBL) && is_null($tujuhBP) && is_null($tujuhLL) && is_null($tujuhLP)
+							&& is_null($delapanBL) && is_null($delapanBP) && is_null($delapanLL) && is_null($delapanLP) && is_null($sembilanBL) && is_null($sembilanBP) && is_null($sembilanLL) && is_null($sembilanLP)
+							&& is_null($sepuluhBL) && is_null($sepuluhBP) && is_null($sepuluhLL) && is_null($sepuluhLP) && is_null($sebelasBL) && is_null($sebelasBP) && is_null($sebelasLL) && is_null($sebelasLP)
+							&& is_null($duabelasBL) && is_null($duabelasBP) && is_null($duabelasLL) && is_null($duabelasLP)&& is_null($total_baru_l) && is_null($total_baru_p) && is_null($total_lama_l) && is_null($total_lama_p) && is_null($total_jumlah)	)
 							{
 								$kosong++; // Tambah 1 variabel $kosong
 							}
