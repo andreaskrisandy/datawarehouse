@@ -101,7 +101,9 @@
 
 					$excelreader = new PHPExcel_Reader_Excel2007();
 					$loadexcel = $excelreader->load('tmp/'.$nama_file_baru); // Load file yang tadi diupload ke folder tmp
-					$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true);
+					$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true, true, true ,true, true, true ,true, true, true ,true,true, true ,true, true, true ,true, true, true ,true,
+				 																									true, true ,true, true, true ,true, true, true ,true,true, true ,true,true, true ,true, true, true ,true, true, true ,true, true, true ,true,
+																												true, true ,true, true, true ,true, true, true, true, true, true, true);
 
 					// Buat sebuah tag form untuk proses import data ke database
 					echo "<form method='post' action='import.php'>";

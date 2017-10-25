@@ -194,7 +194,7 @@
 					include "koneksi.php";
 
 					// Buat query untuk menampilkan semua data siswa
-					$sql = $pdo->prepare("SELECT * FROM record");
+					$sql = $pdo->prepare("SELECT * FROM lb_1");
 					$sql->execute(); // Eksekusi querynya
 
 					$no = 1; // Untuk penomoran tabel, di awal set dengan 1
@@ -251,8 +251,10 @@
 						echo "<td>".$data['12BP']."</td>";
 						echo "<td>".$data['12LL']."</td>";
 						echo "<td>".$data['12LP']."</td>";
-						echo "<td>".$data['total_baru']."</td>";
-						echo "<td>".$data['total_lama']."</td>";
+						echo "<td>".$data['total_baru_l']."</td>";
+						echo "<td>".$data['total_baru_p']."</td>";
+						echo "<td>".$data['total_lama_l']."</td>";
+						echo "<td>".$data['total_lama_p']."</td>";
 						echo "<td>".$data['total_jumlah']."</td>";
 						echo "</tr>";
 

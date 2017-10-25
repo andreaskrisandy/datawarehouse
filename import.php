@@ -11,6 +11,16 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 
 	$excelreader = new PHPExcel_Reader_Excel2007();
 	$loadexcel = $excelreader->load('tmp/'.$nama_file_baru); // Load file excel yang tadi diupload ke folder tmp
+
+	$message1 = "good";
+	$message2 = "bad";
+
+	if ($loadexcel) {
+		echo "<script type='text/javascript'>alert('$message1');</script>";
+	}else{
+		echo "<script type='text/javascript'>alert('$message2');</script>";
+	}
+
 	$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true, true, true ,true, true, true ,true, true, true ,true,true, true ,true, true, true ,true, true, true ,true,
  																									true, true ,true, true, true ,true, true, true ,true,true, true ,true,true, true ,true, true, true ,true, true, true ,true, true, true ,true,
 																								true, true ,true, true, true ,true, true, true, true, true, true, true);
@@ -156,6 +166,12 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 		}
 
 		$numrow++; // Tambah 1 setiap kali looping
+	}
+
+	if($sql){
+		echo "You database has imported successfully";
+	}else{
+		echo "Sorry! There is some problem.";
 	}
 }
 
