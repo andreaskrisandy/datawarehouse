@@ -81,13 +81,13 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 		$total_jumlah = $row['BD'];
 
 		// Cek jika semua data tidak diisi
-		if(empty($id) && empty($kode) && empty($penyakit) && empty($satuBL) && empty($satuBP) && empty($satuLL) && empty($satuLP)
-		&& empty($duaBL) && empty($duaBP) && empty($duaLL) && empty($duaLP) && empty($tigaBL) && empty($tigaBP) && empty($tigaLL) && empty($tigaLP)
-		&& empty($empatBL) && empty($empatBP) && empty($empatLL) && empty($empatLP) && empty($limaBL) && empty($limaBP) && empty($limaLL) && empty($limaLP)
-		&& empty($enamBL) && empty($enamBP) && empty($enamLL) && empty($enamLP) && empty($tujuhBL) && empty($tujuhBP) && empty($tujuhLL) && empty($tujuhLP)
-		&& empty($delapanBL) && empty($delapanBP) && empty($delapanLL) && empty($delapanLP) && empty($sembilanBL) && empty($sembilanBP) && empty($sembilanLL) && empty($sembilanLP)
-		&& empty($sepuluhBL) && empty($sepuluhBP) && empty($sepuluhLL) && empty($sepuluhLP) && empty($sebelasBL) && empty($sebelasBP) && empty($sebelasLL) && empty($sebelasLP)
-		&& empty($duabelasBL) && empty($duabelasBP) && empty($duabelasLL) && empty($duabelasLP)&& empty($total_baru_l) && empty($total_baru_p) && empty($total_lama_l) && empty($total_lama_p) && empty($total_jumlah)	)
+		if(is_null($id) && is_null($kode) && is_null($penyakit) && is_null($satuBL) && is_null($satuBP) && is_null($satuLL) && is_null($satuLP)
+		&& is_null($duaBL) && is_null($duaBP) && is_null($duaLL) && is_null($duaLP) && is_null($tigaBL) && is_null($tigaBP) && is_null($tigaLL) && is_null($tigaLP)
+		&& is_null($empatBL) && is_null($empatBP) && is_null($empatLL) && is_null($empatLP) && is_null($limaBL) && is_null($limaBP) && is_null($limaLL) && is_null($limaLP)
+		&& is_null($enamBL) && is_null($enamBP) && is_null($enamLL) && is_null($enamLP) && is_null($tujuhBL) && is_null($tujuhBP) && is_null($tujuhLL) && is_null($tujuhLP)
+		&& is_null($delapanBL) && is_null($delapanBP) && is_null($delapanLL) && is_null($delapanLP) && is_null($sembilanBL) && is_null($sembilanBP) && is_null($sembilanLL) && is_null($sembilanLP)
+		&& is_null($sepuluhBL) && is_null($sepuluhBP) && is_null($sepuluhLL) && is_null($sepuluhLP) && is_null($sebelasBL) && is_null($sebelasBP) && is_null($sebelasLL) && is_null($sebelasLP)
+		&& is_null($duabelasBL) && is_null($duabelasBP) && is_null($duabelasLL) && is_null($duabelasLP)&& is_null($total_baru_l) && is_null($total_baru_p) && is_null($total_lama_l) && is_null($total_lama_p) && is_null($total_jumlah)	)
 		continue; // Lewat data pada baris ini (masuk ke looping selanjutnya / baris selanjutnya)
 
 		// Cek $numrow apakah lebih dari 1
