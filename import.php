@@ -12,25 +12,12 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 	$excelreader = new PHPExcel_Reader_Excel2007();
 	$loadexcel = $excelreader->load('tmp/'.$nama_file_baru); // Load file excel yang tadi diupload ke folder tmp
 
-	$message1 = "good";
-	$message2 = "bad";
-
-	if ($loadexcel) {
-		echo "<script type='text/javascript'>alert('$message1');</script>";
-	}else{
-		echo "<script type='text/javascript'>alert('$message2');</script>";
-	}
-
-	$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true, true, true ,true, true, true ,true, true, true ,true,true, true ,true, true, true ,true, true, true ,true,
- 																									true, true ,true, true, true ,true, true, true ,true,true, true ,true,true, true ,true, true, true ,true, true, true ,true, true, true ,true,
-																								true, true ,true, true, true ,true, true, true, true, true, true, true);
+	$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true);
 
 	// Buat query Insert
-	$sql = $pdo->prepare("INSERT INTO lb_1 VALUES(:id,:kode,:penyakit,:1BL,:1BP,:1LL,:1LP,:2BL,:2BP,:2LL,:2LP,:3BL,:3BP,:3LL,:3LP,:4BL,:4BP,:4LL,:4LP,:5BL,:5BP,:5LL,:5LP,:
-																								6BL,:6BP,:6LL,:6LP,:7BL,:7BP,:7LL,:7LP,:8BL,:8BP,:8LL,:8LP,:9BL,:9BP,:9LL,:9LP,:10BL,:10BP,:10LL,:10LP,:11BL,:11BP,:11LL,:11LP,:
-																							  12BL,:12BP,:12LL,:12LP,:total_baru_l,:total_baru_p,:total_lama_l,:total_lama_p,:total_jumlah)");
+	$sql = $pdo->prepare("INSERT INTO lb_1 VALUES(:id,:kode,:penyakit,:1BL,:1BP,:1LL,:1LP,:2BL,:2BP,:2LL,:2LP,:3BL,:3BP,:3LL,:3LP,:4BL,:4BP,:4LL,:4LP,:5BL,:5BP,:5LL,:5LP,:6BL,:6BP,:6LL,:6LP,:7BL,:7BP,:7LL,:7LP,:8BL,:8BP,:8LL,:8LP,:9BL,:9BP,:9LL,:9LP,:10BL,:10BP,:10LL,:10LP,:11BL,:11BP,:11LL,:11LP,:12BL,:12BP,:12LL,:12LP,:total_baru_l,:total_baru_p,:total_lama_l,:total_lama_p,:total_jumlah)");
 
-	$numrow = 1;
+	$numrow = 3;
 	foreach($sheet as $row){
 		// Ambil data pada excel sesuai Kolom
 		$id = $row['A']; // Ambil data NIS
@@ -90,14 +77,14 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 		$total_lama_p = $row['BC'];
 		$total_jumlah = $row['BD'];
 
-		// Cek jika semua data tidak diisi
+		// // Cek jika semua data tidak diisi
 		if(is_null($id) && is_null($kode) && is_null($penyakit) && is_null($satuBL) && is_null($satuBP) && is_null($satuLL) && is_null($satuLP)
 		&& is_null($duaBL) && is_null($duaBP) && is_null($duaLL) && is_null($duaLP) && is_null($tigaBL) && is_null($tigaBP) && is_null($tigaLL) && is_null($tigaLP)
 		&& is_null($empatBL) && is_null($empatBP) && is_null($empatLL) && is_null($empatLP) && is_null($limaBL) && is_null($limaBP) && is_null($limaLL) && is_null($limaLP)
 		&& is_null($enamBL) && is_null($enamBP) && is_null($enamLL) && is_null($enamLP) && is_null($tujuhBL) && is_null($tujuhBP) && is_null($tujuhLL) && is_null($tujuhLP)
 		&& is_null($delapanBL) && is_null($delapanBP) && is_null($delapanLL) && is_null($delapanLP) && is_null($sembilanBL) && is_null($sembilanBP) && is_null($sembilanLL) && is_null($sembilanLP)
 		&& is_null($sepuluhBL) && is_null($sepuluhBP) && is_null($sepuluhLL) && is_null($sepuluhLP) && is_null($sebelasBL) && is_null($sebelasBP) && is_null($sebelasLL) && is_null($sebelasLP)
-		&& is_null($duabelasBL) && is_null($duabelasBP) && is_null($duabelasLL) && is_null($duabelasLP)&& is_null($total_baru_l) && is_null($total_baru_p) && is_null($total_lama_l) && is_null($total_lama_p) && is_null($total_jumlah)	)
+		&& is_null($duabelasBL) && is_null($duabelasBP) && is_null($duabelasLL) && is_null($duabelasLP)&& is_null($total_baru_l) && is_null($total_baru_p) && is_null($total_lama_l) && is_null($total_lama_p) && is_null($total_jumlah))
 		continue; // Lewat data pada baris ini (masuk ke looping selanjutnya / baris selanjutnya)
 
 		// Cek $numrow apakah lebih dari 1
