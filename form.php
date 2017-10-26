@@ -393,13 +393,13 @@
 							$total_jumlah_td = ( ! is_null($total_jumlah))? "" : " style='background: #E07171;'"; // Jika NIS kosong, beri warna merah
 
 							// Jika salah satu data ada yang kosong
-							if(is_null($id) && is_null($kode) && is_null($penyakit) && is_null($satuBL) && is_null($satuBP) && is_null($satuLL) && is_null($satuLP)
-							&& is_null($duaBL) && is_null($duaBP) && is_null($duaLL) && is_null($duaLP) && is_null($tigaBL) && is_null($tigaBP) && is_null($tigaLL) && is_null($tigaLP)
-							&& is_null($empatBL) && is_null($empatBP) && is_null($empatLL) && is_null($empatLP) && is_null($limaBL) && is_null($limaBP) && is_null($limaLL) && is_null($limaLP)
-							&& is_null($enamBL) && is_null($enamBP) && is_null($enamLL) && is_null($enamLP) && is_null($tujuhBL) && is_null($tujuhBP) && is_null($tujuhLL) && is_null($tujuhLP)
-							&& is_null($delapanBL) && is_null($delapanBP) && is_null($delapanLL) && is_null($delapanLP) && is_null($sembilanBL) && is_null($sembilanBP) && is_null($sembilanLL) && is_null($sembilanLP)
-							&& is_null($sepuluhBL) && is_null($sepuluhBP) && is_null($sepuluhLL) && is_null($sepuluhLP) && is_null($sebelasBL) && is_null($sebelasBP) && is_null($sebelasLL) && is_null($sebelasLP)
-							&& is_null($duabelasBL) && is_null($duabelasBP) && is_null($duabelasLL) && is_null($duabelasLP)&& is_null($total_baru_l) && is_null($total_baru_p) && is_null($total_lama_l) && is_null($total_lama_p) && is_null($total_jumlah)	)
+							if(is_null($id) or is_null($kode) or is_null($penyakit) or is_null($satuBL) or is_null($satuBP) or is_null($satuLL) or is_null($satuLP)
+							or is_null($duaBL) or is_null($duaBP) or is_null($duaLL) or is_null($duaLP) or is_null($tigaBL) or is_null($tigaBP) or is_null($tigaLL) or is_null($tigaLP)
+							or is_null($empatBL) or is_null($empatBP) or is_null($empatLL) or is_null($empatLP) or is_null($limaBL) or is_null($limaBP) or is_null($limaLL) or is_null($limaLP)
+							or is_null($enamBL) or is_null($enamBP) or is_null($enamLL) or is_null($enamLP) or is_null($tujuhBL) or is_null($tujuhBP) or is_null($tujuhLL) or is_null($tujuhLP)
+							or is_null($delapanBL) or is_null($delapanBP) or is_null($delapanLL) or is_null($delapanLP) or is_null($sembilanBL) or is_null($sembilanBP) or is_null($sembilanLL) or is_null($sembilanLP)
+							or is_null($sepuluhBL) or is_null($sepuluhBP) or is_null($sepuluhLL) or is_null($sepuluhLP) or is_null($sebelasBL) or is_null($sebelasBP) or is_null($sebelasLL) or is_null($sebelasLP)
+							or is_null($duabelasBL) or is_null($duabelasBP) or is_null($duabelasLL) or is_null($duabelasLP) or is_null($total_baru_l) or is_null($total_baru_p) or is_null($total_lama_l) or is_null($total_lama_p) or is_null($total_jumlah)	)
 							{
 								$kosong++; // Tambah 1 variabel $kosong
 							}
