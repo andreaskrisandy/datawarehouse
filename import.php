@@ -17,7 +17,7 @@ if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 	// Buat query Insert
 	$sql = $pdo->prepare("INSERT INTO lb_1 VALUES(:id,:kode,:penyakit,:1BL,:1BP,:1LL,:1LP,:2BL,:2BP,:2LL,:2LP,:3BL,:3BP,:3LL,:3LP,:4BL,:4BP,:4LL,:4LP,:5BL,:5BP,:5LL,:5LP,:6BL,:6BP,:6LL,:6LP,:7BL,:7BP,:7LL,:7LP,:8BL,:8BP,:8LL,:8LP,:9BL,:9BP,:9LL,:9LP,:10BL,:10BP,:10LL,:10LP,:11BL,:11BP,:11LL,:11LP,:12BL,:12BP,:12LL,:12LP,:total_baru_l,:total_baru_p,:total_lama_l,:total_lama_p,:total_jumlah)");
 
-	$numrow = 3;
+	$numrow = 1;
 	foreach($sheet as $row){
 		// Ambil data pada excel sesuai Kolom
 		$id = $row['A']; // Ambil data NIS

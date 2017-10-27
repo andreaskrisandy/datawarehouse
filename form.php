@@ -115,8 +115,8 @@
 						<th align='center' rowspan='3'>No</th>
 						<th align='center' rowspan='3'>Kode</th>
 						<th align='center' rowspan='3'>Penyakit</th>
-						<th align='center' colspan='3'>0-7 Hr</th>
-						<th align='center' colspan='3'>8-28 Hr</th>
+						<th align='center' colspan='4'>0-7 Hr</th>
+						<th align='center' colspan='4'>8-28 Hr</th>
 						<th align='center' colspan='4'>1Bl-1Th</th>
 						<th align='center' colspan='4'>1-4Th</th>
 						<th align='center' colspan='4'>5-9Th</th>
@@ -127,128 +127,127 @@
 						<th align='center' colspan='4'>55-59Th</th>
 						<th align='center' colspan='4'>60-69Th</th>
 						<th align='center' colspan='4'>70Th</th>
-						<th align='center' colspan='7'>Total</th>
-						</tr>
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th align='center' colspan='5'>Total</th>
+					</tr>
+					<tr>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
 
-							<th colspan='2'>Baru</th>
-							<th colspan='2'>Lama</th>
-							<th rowspan='2'>JML</th>
-						</tr>
-						<tr>
-							<th>L</th>
-							<th>P</th>
+						<th colspan='2'>Baru</th>
+						<th colspan='2'>Lama</th>
+						<th rowspan='2'>JML</th>
+					</tr>
+					<tr>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
+						<th>L</th>
+						<th>P</th>
 
-							<th>L</th>
-							<th>P</th>
-
-						</tr>
+						<th>L</th>
+						<th>P</th>
 					</tr>";
 
 					$numrow = 1;
