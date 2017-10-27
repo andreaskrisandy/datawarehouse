@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>Datawarehosue</title>
+<title>Sistem Informasi Pelaporan Online</title>
 
 <link href="main/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="main/css/londinium-theme.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 
-<script type="text/javascript" src="mian/js/plugins/charts/sparkline.min.js"></script>
+<script type="text/javascript" src="main/js/plugins/charts/sparkline.min.js"></script>
 
 <script type="text/javascript" src="main/js/plugins/forms/uniform.min.js"></script>
 <script type="text/javascript" src="main/js/plugins/forms/select2.min.js"></script>
@@ -53,7 +53,7 @@
 	<!-- Navbar -->
 	<div class="navbar navbar-inverse" role="navigation">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#"><img src="images/logo.png" alt="Datawarehouse"></a>
+			<a class="navbar-brand" href="#"><img src="images/logo.png" alt="Sistem Informasi Pelaporan Online"></a>
 		</div>
 	</div>
 	<!-- /navbar -->
@@ -61,7 +61,7 @@
 
 	<!-- Login wrapper -->
 	<div class="login-wrapper">
-    	<form action="#" role="form">
+    	<form action="check-login.php" role="form" method="post">
 			<div class="popup-header">
 				<a href="#" class="pull-left"><i class="icon-user-plus"></i></a>
 				<span class="text-semibold">User Masuk</span>
@@ -69,13 +69,13 @@
 			<div class="well">
 				<div class="form-group has-feedback">
 					<label>Username</label>
-					<input type="text" class="form-control" placeholder="Username">
+					<input type="text" class="form-control" placeholder="Username" name="username">
 					<i class="icon-users form-control-feedback"></i>
 				</div>
 
 				<div class="form-group has-feedback">
 					<label>Password</label>
-					<input type="password" class="form-control" placeholder="Password">
+					<input type="password" class="form-control" placeholder="Password" name="password">
 					<i class="icon-lock form-control-feedback"></i>
 				</div>
 
