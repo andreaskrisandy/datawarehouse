@@ -292,11 +292,11 @@ if ( !isset($_SESSION['user_login']) ||
 
 				<!-- Main navigation -->
 				<ul class="navigation">
-					<li class="active"><a href="index.php"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
+					<li><a href="index.php"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
 					<li>
 						<a href="#"><span>Manajemen Laporan</span> <i class="icon-paragraph-justify2"></i></a>
 						<ul>
-							<li><a href="laporan_lb1.php">Laporan LB1</a></li>
+							<li><a href="#">Laporan LB1</a></li>
 							<!-- <li><a href="form_layouts.html">Form layouts</a></li>
 							<li><a href="form_grid.html">Inputs grid</a></li>
 							<li><a href="wysiwyg.html">WYSIWYG editor</a></li>
@@ -381,7 +381,7 @@ if ( !isset($_SESSION['user_login']) ||
 						<a href="#"><span>Manajemen User</span> <i class="icon-user-plus"></i></a>
 						<ul>
 							<li><a href="tambah_user.php">Tambah User</a></li>
-							<li><a href="manajemen_user.php">Manajemen User</a></li>
+							<li class="active"><a href="manajemen_user.php">Manajemen User</a></li>
 						</ul>
 					</li>
 					<!-- <li>
@@ -466,7 +466,8 @@ if ( !isset($_SESSION['user_login']) ||
 			<div class="breadcrumb-line">
 				<ul class="breadcrumb">
 					<li><a href="index.php">Home</a></li>
-					<li class="active">Dashboard</li>
+					<li><a href="#">Manajemen</a></li>
+					<li class="active">Manajemen User</li>
 				</ul>
 
 				<!-- <div class="visible-xs breadcrumb-toggle">
