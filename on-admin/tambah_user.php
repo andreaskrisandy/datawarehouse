@@ -292,11 +292,11 @@ if ( !isset($_SESSION['user_login']) ||
 
 				<!-- Main navigation -->
 				<ul class="navigation">
-					<li class="active"><a href="index.php"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
+					<li><a href="index.php"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
 					<li>
 						<a href="#"><span>Manajemen Laporan</span> <i class="icon-paragraph-justify2"></i></a>
 						<ul>
-							<li><a href="laporan_lb1.php">Laporan LB1</a></li>
+							<li><a href="#">Laporan LB1</a></li>
 							<!-- <li><a href="form_layouts.html">Form layouts</a></li>
 							<li><a href="form_grid.html">Inputs grid</a></li>
 							<li><a href="wysiwyg.html">WYSIWYG editor</a></li>
@@ -380,7 +380,7 @@ if ( !isset($_SESSION['user_login']) ||
 					<li>
 						<a href="#"><span>Manajemen User</span> <i class="icon-user-plus"></i></a>
 						<ul>
-							<li><a href="tambah_user.php">Tambah User</a></li>
+							<li class="active"><a href="tambah_user.php">Tambah User</a></li>
 							<li><a href="manajemen_user.php">Manajemen User</a></li>
 						</ul>
 					</li>
@@ -451,13 +451,13 @@ if ( !isset($_SESSION['user_login']) ||
 					<h3>Dashboard <small>Welcome <?=$_SESSION['nama'];?></small></h3>
 				</div>
 
-				<div id="reportrange" class="range">
+				<!-- <div id="reportrange" class="range">
 					<div class="visible-xs header-element-toggle">
 						<a class="btn btn-primary btn-icon"><i class="icon-calendar"></i></a>
 					</div>
 					<div class="date-range"></div>
 					<span class="label label-danger">9</span>
-				</div>
+				</div> -->
 			</div>
 			<!-- /page header -->
 
@@ -466,7 +466,8 @@ if ( !isset($_SESSION['user_login']) ||
 			<div class="breadcrumb-line">
 				<ul class="breadcrumb">
 					<li><a href="index.php">Home</a></li>
-					<li class="active">Dashboard</li>
+					<li><a href="#">Manajemen</a></li>
+					<li class="active">Tambah User</li>
 				</ul>
 
 				<!-- <div class="visible-xs breadcrumb-toggle">
@@ -976,9 +977,99 @@ if ( !isset($_SESSION['user_login']) ||
             </div> -->
             <!-- /alert -->
 
+            <!-- Simple registration form -->
+			<form class="" method="post" action="simpan.php">
+	            <div class="panel panel-default">
+	                <div class="panel-heading"><h6 class="panel-title"><i class="icon-pencil3"></i> Input User</h6></div>
+	                <div class="panel-body">
+	                	<div class="row">
+	                		<div class="col-md-6">
+	                			<div class="form-group">
+									<label>Nama:</label>
+                                    <input type="text" placeholder="Your name" name="nama" class="form-control">
+	                			</div>
+
+	                			<div class="form-group">
+									<label>Username:</label>
+                                    <input type="text" placeholder="Your username" name="username" class="form-control">
+	                			</div>
+
+	                			<div class="form-group">
+									<label>Password:</label>
+                                    <input type="text" placeholder="Your password" name="password" class="form-control">
+	                			</div>
+
+	                			<div class="form-group">
+									<label>Kategori Admin:</label>
+                                    <select data-placeholder="Pilih Kategori Admin" name="level_user" class="select-full" tabindex="2">
+                                        <option value="admin_dinkes">Admin Dinkes</option> 
+                                        <option value="admin_pemegang_program">Admin Pemegang Program</option> 
+                                        <option value="admin_puskesmas">Admin Puskesmas</option>                                      
+                                    </select>
+	                			</div>
+
+	                			<!-- <div class="form-group">
+									<label>Repeat password:</label>
+                                    <input type="text" placeholder="Repeat password" class="form-control">
+	                			</div>
+ -->
+	                			<!-- <div class="form-group">
+									<label>Are you a human?</label>
+									<div class="row">
+									<div class="col-xs-9">
+                                    <input type="text" placeholder="Enter result" class="form-control">
+                                    </div>
+                                    <div class="col-xs-3">
+                                    <span class="help-block">7 + 5 - 12 = ?</span>
+                                    </div>
+                                    </div>
+	                			</div> -->
+	                		</div>
+
+	                		<div class="col-md-6">
+	                			<!-- <div class="form-group">
+									<label>Kategori Admin:</label>
+                                    <select data-placeholder="Pilih Kategori Admin" class="select-full" tabindex="2">
+                                        <option value="admin_dinkes">Admin Dinkes</option> 
+                                        <option value="admin_pemegang_program">Admin Pemegang Program</option> 
+                                        <option value="admin_puskesmas">Admin Puskesmas</option>                                      
+                                    </select>
+	                			</div> -->
+
+	                			<!-- <div class="form-group">
+									<label>Gender:</label>
+
+									<div>
+									<label class="radio-inline">
+										<input type="radio" name="gender" class="styled" checked="checked">
+										Male
+									</label>
+
+									<label class="radio-inline">
+										<input type="radio" name="gender" class="styled">
+										Female
+									</label>
+									</div>
+	                			</div> -->
+
+	                			<!-- <div class="form-group">
+									<label>About yourself:</label>
+                                    <textarea rows="6" cols="5" placeholder="Few words about yourself..." class="elastic form-control"></textarea>
+	                			</div> -->
+	                		</div>
+	                	</div>
+
+                        <div class="form-actions text-right">
+                        	<input type="reset" value="Cancel" class="btn btn-danger">
+                        	<input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
+				    </div>
+				</div>
+			</form>
+			<!-- /simple registration form -->
 
 	        <!-- Tasks table -->
-	        <div class="block">
+	        <!-- <div class="block">
 	        	<h6 class="heading-hr"><i class="icon-grid"></i> Recent tasks</h6>
 	            <div class="datatable-tasks">
 	                <table class="table table-bordered">
@@ -1617,7 +1708,7 @@ if ( !isset($_SESSION['user_login']) ||
 	                    </tbody>
 	                </table>
 	            </div>
-	        </div>
+	        </div> -->
 	        <!-- /tasks table -->
 
 
